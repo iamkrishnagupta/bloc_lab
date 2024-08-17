@@ -1,10 +1,13 @@
-import 'package:bloc_lab/features/home/data/model/home_product_datamodel.dart';
+
 import 'package:flutter/material.dart';
+
+import '../bloc/home_bloc.dart';
+import '../data/model/home_product_datamodel.dart';
 
 class ProductTile extends StatefulWidget {
   final ProductDataModel productDataModel;
-
-  const ProductTile({super.key, required this.productDataModel});
+  final HomeBloc homeBloc;
+  const ProductTile({super.key, required this.productDataModel, required this.homeBloc});
 
   @override
   State<ProductTile> createState() => _ProductTileState();
@@ -15,6 +18,7 @@ class _ProductTileState extends State<ProductTile> {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       margin: const EdgeInsets.all(20),
       child: Card(
@@ -67,13 +71,14 @@ class _ProductTileState extends State<ProductTile> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      //add to wishlist
+                      widget.homeBloc.add(HomeWishlistButtonClickedEvent());
                     },
                     child: const Text('Add to Wishlist'),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      //add to cart
+                      widget.homeBloc.add(HomeCartButtonClickedEvent());
+
                     },
                     child: const Text('Add to Cart'),
                   ),

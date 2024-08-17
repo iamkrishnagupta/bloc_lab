@@ -85,7 +85,7 @@ class _HomeState extends State<Home> {
                   itemCount: (state as HomeLoadedSuccessState).products.length,
                   itemBuilder: (context, index) {
                     return ProductTile(
-                      productDataModel: state.products[index],
+                      productDataModel: state.products[index], homeBloc: homeBloc,
                     );
                   }),
             );
