@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../cart/pages/cart.dart';
 import '../../wishlist/pages/wishlist.dart';
 import '../bloc/home_bloc.dart';
+import 'product_tile_widget.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -80,6 +81,13 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
+              body: ListView.builder(
+                  itemCount: (state as HomeLoadedSuccessState).products.length,
+                  itemBuilder: (context, index) {
+                    return ProductTile(
+                      productDataModel: state.products[index],
+                    );
+                  }),
             );
 
           case const (HomeErrorState):
