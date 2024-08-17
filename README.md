@@ -1,3 +1,3 @@
 # bloc_lab
 
-A new Flutter project.
+just a new flutter project demo using bloc.
