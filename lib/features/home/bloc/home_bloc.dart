@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:bloc_lab/data/food_items.dart';
 import 'package:bloc_lab/features/home/data/model/home_product_datamodel.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';

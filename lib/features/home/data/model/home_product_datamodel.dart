@@ -1,5 +1,5 @@
 class ProductDataModel {
-  final int id;
+  final String id;
   final String description;
   final String imageUrl;
   final double price;

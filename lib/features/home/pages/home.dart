@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,6 +13,13 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    super.initState();
+    //passing the initial event to the bloc
+    homeBloc.add(HomeInitialEvent());
+  }
+
   final HomeBloc homeBloc = HomeBloc();
 
   @override
@@ -41,22 +46,56 @@ class _HomeState extends State<Home> {
         }
       },
       builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(centerTitle: true, title: Text('Bloc Hub'), actions: [
-            IconButton(
-              onPressed: () {
-                homeBloc.add(HomeWishlistButtonNavigateEvent());
-              },
-              icon: Icon(Icons.favorite),
-            ),
-            IconButton(
-              onPressed: () {
-                homeBloc.add(HomeCartButtonNavigateEvent());
-              },
-              icon: Icon(Icons.shopping_cart),
-            ),
-          ]),
-        );
+        //only build when not action state
+
+        switch (state.runtimeType) {
+          case const (HomeLoadingState):
+            return const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            ); //return loading widget
+
+          case const (HomeLoadedSuccessState):
+            return Scaffold(
+              appBar: AppBar(
+                centerTitle: true,
+                title: const Text('Bloc Hub'),
+                actions: [
+                  IconButton(
+                    onPressed: () {
+                      homeBloc.add(
+                        HomeWishlistButtonNavigateEvent(),
+                      );
+                    },
+                    icon: const Icon(Icons.favorite),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      homeBloc.add(
+                        HomeCartButtonNavigateEvent(),
+                      );
+                    },
+                    icon: const Icon(Icons.shopping_cart),
+                  ),
+                ],
+              ),
+            );
+
+          case const (HomeErrorState):
+            return const Scaffold(
+              body: Center(
+                child: Text('Error'),
+              ),
+            );
+
+          default:
+            return const SizedBox(
+              child: Center(
+                child: Text('Pookie <3'),
+              ),
+            );
+        }
       },
     );
   }
