@@ -8,9 +8,15 @@ sealed class HomeEvent {}
 
 class HomeInitialEvent extends HomeEvent {}
 
-class HomeWishlistButtonClickedEvent extends HomeEvent {}
+class HomeWishlistButtonClickedEvent extends HomeEvent {
+  final ProductDataModel product;
+  HomeWishlistButtonClickedEvent({required this.product});
+}
 
-class HomeCartButtonClickedEvent extends HomeEvent {}
+class HomeCartButtonClickedEvent extends HomeEvent {
+   final ProductDataModel product;
+  HomeCartButtonClickedEvent({required this.product});
+}
 
 class HomeWishlistButtonNavigateEvent extends HomeEvent {}
 
