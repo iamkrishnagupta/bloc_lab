@@ -6,6 +6,8 @@ sealed class HomeEvent {}
 
 //add your events, could add more if you want
 
+class HomeInitialEvent extends HomeEvent {}
+
 class HomeWishlistButtonClickedEvent extends HomeEvent {}
 
 class HomeCartButtonClickedEvent extends HomeEvent {}
