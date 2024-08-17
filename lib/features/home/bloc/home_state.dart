@@ -1,6 +1,6 @@
 part of 'home_bloc.dart';
 
-@immutable 
+@immutable
 //simple state - builds UI
 sealed class HomeState {}
 
@@ -12,7 +12,6 @@ final class HomeInitial extends HomeState {}
 class HomeLoadingState extends HomeState {}
 
 class HomeLoadedSuccessState extends HomeState {
-  
   final List<ProductDataModel> products;
 
   HomeLoadedSuccessState({required this.products});
@@ -25,4 +24,6 @@ class HomeNavigateToWishlistActionState extends HomeActionState {}
 
 class HomeNavigateToCartActionState extends HomeActionState {}
 
+class HomeProductAddedToWishlistActionState extends HomeActionState {}
 
+class HomeProductAddedToCartActionState extends HomeActionState {}

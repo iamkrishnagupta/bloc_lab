@@ -45,6 +45,20 @@ class _HomeState extends State<Home> {
             ),
           );
         }
+        else if (state is HomeProductAddedToWishlistActionState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Product added to wishlist!'),
+            ),
+          );
+        }
+        else if (state is HomeProductAddedToCartActionState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Product added to cart!'),
+            ),
+          );
+        }
       },
       builder: (context, state) {
         //only build when not action state

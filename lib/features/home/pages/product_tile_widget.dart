@@ -71,13 +71,14 @@ class _ProductTileState extends State<ProductTile> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      widget.homeBloc.add(HomeWishlistButtonClickedEvent());
+                      widget.homeBloc.add(HomeWishlistButtonClickedEvent(product: widget.productDataModel));
+
                     },
                     child: const Text('Add to Wishlist'),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      widget.homeBloc.add(HomeCartButtonClickedEvent());
+                      widget.homeBloc.add(HomeCartButtonClickedEvent(product: widget.productDataModel));
 
                     },
                     child: const Text('Add to Cart'),
