@@ -4,3 +4,9 @@ part of 'wishlist_bloc.dart';
 sealed class WishlistEvent {}
 
 class WishlistInitialEvent extends WishlistEvent {}
+
+class WishlistRemoveButtonClickedEvent extends WishlistEvent {
+  final ProductDataModel product;
+  WishlistRemoveButtonClickedEvent({required this.product});
+
+}
