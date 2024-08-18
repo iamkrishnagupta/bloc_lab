@@ -68,15 +68,10 @@ class _WishlistTileState extends State<WishlistTile> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      // widget.cartBloc.add(CartButtonClickedEvent());
+                      widget.wishlistBloc.add(WishlistRemoveButtonClickedEvent(
+                          product: widget.productDataModel));
                     },
-                    child: const Text('Add to Wishlist'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      // widget.homeBloc.add(HomeCartButtonClickedEvent(product: widget.productDataModel));
-                    },
-                    child: const Text('Add to Cart'),
+                    child: const Text('Remove from Wishlist'),
                   ),
                 ],
               )
