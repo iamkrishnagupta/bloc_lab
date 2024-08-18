@@ -29,7 +29,5 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
 
     //note: emit a new state with the updated wishlist
     emit(WishlistSuccessState(wishlistItems: wishlistItems));
-
-
   }
 }

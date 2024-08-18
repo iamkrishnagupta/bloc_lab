@@ -8,5 +8,4 @@ class CartInitialEvent extends CartEvent {}
 class CartRemoveButtonClickedEvent extends CartEvent {
   final ProductDataModel product;
   CartRemoveButtonClickedEvent({required this.product});
-
 }

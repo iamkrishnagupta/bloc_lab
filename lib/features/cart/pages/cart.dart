@@ -32,13 +32,11 @@ class _CartState extends State<Cart> {
           buildWhen: (previous, current) => current is! CartActionState,
           listener: (context, state) {
             if (state is ProductRemovedFromCartActionState) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Product removed from cart!'),
-                ));
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                content: Text('Product removed from cart!'),
+              ));
             }
           },
-              
           builder: (context, state) {
             switch (state.runtimeType) {
               case const (CartSuccessState):
@@ -52,8 +50,9 @@ class _CartState extends State<Cart> {
                   },
                 );
             }
-                       return const SizedBox(child: Text('No items found.'),);
-
+            return const SizedBox(
+              child: Text('No items found.'),
+            );
           },
         ));
   }

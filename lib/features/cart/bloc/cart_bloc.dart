@@ -14,7 +14,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   CartBloc() : super(CartInitial()) {
     on<CartInitialEvent>(cartInitialEvent);
     on<CartRemoveButtonClickedEvent>(cartRemoveButtonClickedEvent);
-
   }
 
   FutureOr<void> cartInitialEvent(
@@ -22,7 +21,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     emit(CartSuccessState(cartItems: cartItems));
   }
 
-   FutureOr<void> cartRemoveButtonClickedEvent(
+  FutureOr<void> cartRemoveButtonClickedEvent(
       CartRemoveButtonClickedEvent event, Emitter<CartState> emit) {
     debugPrint('Remove item from Cart Clicked.');
     cartItems.remove(event.product);
@@ -30,7 +29,5 @@ class CartBloc extends Bloc<CartEvent, CartState> {
 
     //note: emit a new state with the updated cartlist
     emit(CartSuccessState(cartItems: cartItems));
-
-
   }
 }

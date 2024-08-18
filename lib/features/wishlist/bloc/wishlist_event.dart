@@ -8,5 +8,4 @@ class WishlistInitialEvent extends WishlistEvent {}
 class WishlistRemoveButtonClickedEvent extends WishlistEvent {
   final ProductDataModel product;
   WishlistRemoveButtonClickedEvent({required this.product});
-
 }
