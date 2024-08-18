@@ -31,12 +31,12 @@ class _WishlistState extends State<Wishlist> {
           buildWhen: (previous, current) => current is! WishlistActionState,
           listener: (context, state) {
             if (state is ProductRemovedFromWishlistActionState) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Product removed from wishlist!'),
-            ),
-          );
-        }
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Product removed from wishlist!'),
+                ),
+              );
+            }
           },
           builder: (context, state) {
             switch (state.runtimeType) {
@@ -52,7 +52,9 @@ class _WishlistState extends State<Wishlist> {
                   },
                 );
             }
-            return const SizedBox();
+            return const SizedBox(
+              child: Text('No items found.'),
+            );
           },
         ));
   }
