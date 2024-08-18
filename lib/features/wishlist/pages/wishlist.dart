@@ -35,7 +35,8 @@ class _WishlistState extends State<Wishlist> {
             switch (state.runtimeType) {
               case const (WishlistSuccessState):
                 return ListView.builder(
-                  itemCount: (state as WishlistSuccessState).wishlistItems.length,
+                  itemCount:
+                      (state as WishlistSuccessState).wishlistItems.length,
                   itemBuilder: (context, index) {
                     return WishlistTile(
                       productDataModel: state.wishlistItems[index],
@@ -43,7 +44,7 @@ class _WishlistState extends State<Wishlist> {
                     );
                   },
                 );
-            }  
+            }
             return const SizedBox();
           },
         ));

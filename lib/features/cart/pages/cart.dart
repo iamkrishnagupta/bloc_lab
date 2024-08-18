@@ -43,7 +43,7 @@ class _CartState extends State<Cart> {
                     );
                   },
                 );
-            }  
+            }
             return const SizedBox();
           },
         ));

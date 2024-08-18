@@ -44,15 +44,13 @@ class _HomeState extends State<Home> {
               builder: (context) => const Cart(),
             ),
           );
-        }
-        else if (state is HomeProductAddedToWishlistActionState) {
+        } else if (state is HomeProductAddedToWishlistActionState) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text('Product added to wishlist!'),
             ),
           );
-        }
-        else if (state is HomeProductAddedToCartActionState) {
+        } else if (state is HomeProductAddedToCartActionState) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text('Product added to cart!'),
@@ -82,7 +80,6 @@ class _HomeState extends State<Home> {
                       homeBloc.add(
                         HomeWishlistButtonNavigateEvent(),
                         // HomeCartButtonNavigateEvent(),
-
                       );
                     },
                     icon: const Icon(Icons.favorite),
@@ -101,7 +98,8 @@ class _HomeState extends State<Home> {
                   itemCount: (state as HomeLoadedSuccessState).products.length,
                   itemBuilder: (context, index) {
                     return ProductTile(
-                      productDataModel: state.products[index], homeBloc: homeBloc,
+                      productDataModel: state.products[index],
+                      homeBloc: homeBloc,
                     );
                   }),
             );
