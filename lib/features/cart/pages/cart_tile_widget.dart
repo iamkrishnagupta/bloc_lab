@@ -60,22 +60,17 @@ class _CartTileState extends State<CartTile> {
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      // widget.cartBloc.add(CartButtonClickedEvent());
+                      widget.cartBloc.add(CartRemoveButtonClickedEvent(
+                          product: widget.productDataModel));
                     },
-                    child: const Text('Add to Wishlist'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      // widget.homeBloc.add(HomeCartButtonClickedEvent(product: widget.productDataModel));
-                    },
-                    child: const Text('Add to Cart'),
+                    child: const Text('Remove from Cart'),
                   ),
                 ],
               )
