@@ -1,6 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../home/pages/product_tile_widget.dart';
 import '../bloc/cart_bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +43,7 @@ class _CartState extends State<Cart> {
                     );
                   },
                 );
-            }
+            }  
             return const SizedBox();
           },
         ));

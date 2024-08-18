@@ -34,14 +34,14 @@ class _HomeState extends State<Home> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Cart(),
+              builder: (context) => const Wishlist(),
             ),
           );
         } else if (state is HomeNavigateToCartActionState) {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Wishlist(),
+              builder: (context) => const Cart(),
             ),
           );
         }
@@ -81,6 +81,8 @@ class _HomeState extends State<Home> {
                     onPressed: () {
                       homeBloc.add(
                         HomeWishlistButtonNavigateEvent(),
+                        // HomeCartButtonNavigateEvent(),
+
                       );
                     },
                     icon: const Icon(Icons.favorite),
