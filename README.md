@@ -1,11 +1,11 @@
 # BLoC (Business Logic Component) is a state management architecture for Flutter apps.
 
-## Flow:
+### Flow:
 
-##### 1. Events: Widgets trigger events (e.g., button clicks, text changes) by calling methods on the BLoC.
-##### 2. BLoC: The BLoC receives the event and processes it, potentially updating its internal state.
-##### 3. States: The BLoC emits a new state, which is a snapshot of its current state.
-##### 4. Widgets: Widgets listen to the BLoC's state stream and rebuild themselves when a new state is emitted.
+1. Events: Widgets trigger events (e.g., button clicks, text changes) by calling methods on the BLoC.
+2. BLoC: The BLoC receives the event and processes it, potentially updating its internal state.
+3. States: The BLoC emits a new state, which is a snapshot of its current state.
+4. Widgets: Widgets listen to the BLoC's state stream and rebuild themselves when a new state is emitted.
 
 ### Key Components:
 
@@ -21,4 +21,3 @@
 3. Process the event, updating the internal state if necessary.
 4. Emit a new state through the state stream.
 5. Repeat steps 2-4 for each event.
-
