@@ -1,4 +1,4 @@
-BLoC (Business Logic Component) is a state management architecture for Flutter apps. Here's a simplified overview of how it works:
+# BLoC (Business Logic Component) is a state management architecture for Flutter apps.
 
 ## Flow:
 
